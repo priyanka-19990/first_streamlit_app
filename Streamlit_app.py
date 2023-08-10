@@ -13,3 +13,6 @@ st.text('🐔 Hard-Boiled Free-Range Egg')
 st.text('🥑🍞 Avocado Toast')
 # Add a new header
 st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+import pandas as p
+my_fruit_list = p.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt") 
+st.dataframe(my_fruit_list)
