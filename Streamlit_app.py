@@ -1,6 +1,6 @@
 import streamlit as st
 # Add a title
-st.title('My Mom's New Healthy Diner')
+st.title('My Parents New Healthy Diner')
 # Add a header
 st.header('Breakfast Favorites')
 # Add a text
