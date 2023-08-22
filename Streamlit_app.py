@@ -30,8 +30,8 @@ fruityvice_response = r.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response.json()) #just writes the data to the screen
 
 #take the json version of the response and normalize it
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+fruityvice_normalized = p.json_normalize(fruityvice_response.json())
 #output it the screen as a table
-streamlit.dataframe(fruityvice_normalized)
+st.dataframe(fruityvice_normalized)
 
 
