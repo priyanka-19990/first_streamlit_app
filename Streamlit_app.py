@@ -38,4 +38,6 @@ fruityvice_normalized = p.json_normalize(fruityvice_response.json())
 #output it the screen as a table
 st.dataframe(fruityvice_normalized)
 
+import snowflake.connector
+
 
