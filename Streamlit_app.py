@@ -52,50 +52,37 @@ except URLError as e:
   st.error()
 
 #import requests as r
-"""fruityvice_response = r.get("https://fruityvice.com/api/fruit/" + fruit_choice)
- st.text(fruityvice_response.json()) """
+ #fruityvice_response = r.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+ #st.text(fruityvice_response.json()) 
 #just writes the data to the screen
-"""
+
 #take the json version of the response and normalize it
-fruityvice_normalized = p.json_normalize(fruityvice_response.json())
+#fruityvice_normalized = p.json_normalize(fruityvice_response.json())
 #output it the screen as a table
-st.dataframe(fruityvice_normalized)"""
+#st.dataframe(fruityvice_normalized)
 
 #don't run anything past here while we troubleshoot
 #st.stop()
 
 #import snowflake.connector
 
-"""
-my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("SELECT * from fruit_load_list")
-my_data_rows = my_cur.fetchall()
-st.header("The fruit load list contains:")
-st.dataframe(my_data_rows)"""
 
-"""
+#my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
+#my_cur = my_cnx.cursor()
+#my_cur.execute("SELECT * from fruit_load_list")
+#my_data_rows = my_cur.fetchall()
+#st.header("The fruit load list contains:")
+#st.dataframe(my_data_rows)
+
+
 # Allow the end user to add a fruit to the list
-add_my_fruit = st.text_input('What fruit would you like to add?')
-st.write('Thanks for adding ', add_my_fruit)
+#add_my_fruit = st.text_input('What fruit would you like to add?')
+#st.write('Thanks for adding ', add_my_fruit)
 
 #This will not work correctly, but just go with it for now
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+#my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
-#New Section to display fruityvice api response
-st.header('Fruityvice Fruit Advice!')
-try:
-  fruit_choice = st.text_input('What fruit would you like information about?')
-  if not fruit_choice:
-    st.error("Please select a fruit to get information.")
-  else:
-    fruityvice_response = r.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-    fruityvice_normalized = p.json_normalize(fruityvice_response.json())
-    st.dataframe(fruityvice_normalized)
-
-except URLError as e:
-  st.error()
-  """
+  
 st.header("The fruit load list contains:")
 #Snowflake-related functions
 def get_fruit_load_list():
