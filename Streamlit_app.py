@@ -61,3 +61,17 @@ st.write('Thanks for adding ', fruit_choice)
 
 #This will not work correctly, but just go with it for now
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
+#New Section to display fruityvice api response
+st.header('Fruityvice Fruit Advice!')
+try:
+  fruit_choice = st.text_input('What fruit would you like information about?')
+  if not fruit_choice:
+    st.error("Please select a fruit to get information.")
+  else:
+    fruityvice_response = r.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    fruityvice_normalized = p.json_normalize(fruityvice_response.json())
+    st.dataframe(fruityvice_normalized)
+
+except URLError as e:
+  st.error()
